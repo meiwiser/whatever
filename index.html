@@ -165,9 +165,9 @@ table.note {
 
 <div align="center">
    <p id="currentspeed"><b>Med</b></p>
-   <button> > </button> Slow
-   <button> >> </button> Med
-   <button> >>> </button> Fast
+   <button onclick="speed('Slow')"> > </button> Slow
+   <button onclick="speed('Med')"> >> </button> Med
+   <button onclick="speed('Fast')"> >>> </button> Fast
 </div>
 <br>
 <div align="center">
@@ -221,6 +221,10 @@ function rest(x) {
    notes[x] = 0;
    document.getElementById(pos[x]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[x]];
    update();
+}
+  
+function speed(s) {
+   document.getElementById("currentspeed").innerHTML = s;
 }
 
 var outputToBack;
