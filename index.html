@@ -189,6 +189,11 @@ function down(y) {
    if(notes[y] > 0)
    	  notes[y]--;
    document.getElementById(pos[y]).innerHTML = names[notes[y]];
+  
+   var outputToBack;
+   for(var i = 0; i < notes.length; i++){
+   outputToBack += results[notes[i]];
+   }
 }
 </script>
 
