@@ -189,16 +189,20 @@ var names = ["rest.png","hold.png","lowC.png","CSharp.png","D.png","DSharp.png",
 function up(x) {
    if(x === undefined)
       return;
-   if(notes[x] < 14)
-   	  notes[x]++;
+   notes[x]++;
+   <!-----Overflow the note selection----->
+   if(notes[x] > 14)
+      notes[x] = 0;
    document.getElementById(pos[x]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[x]];
    update();
 }
 function down(y) {
    if(y === undefined)
       return;
-   if(notes[y] > 0)
-   	  notes[y]--;
+   notes[y]--;
+   <!-----Overflow the note selection----->
+   if(notes[y] < 0)
+      notes[y] = 14;
    document.getElementById(pos[y]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[y]];
    update();
 }
