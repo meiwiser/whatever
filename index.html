@@ -92,9 +92,19 @@ var pos = ["one","two","three","four","five","six","seven","eight","nine","ten",
 var results = ["x","-","c","C","d","D","e","f","F","g","G","a","A","b","c"];
 
 function up(x) {
+   if(x === undefined)
+      return;
    if(notes[x] < 14)
    	  notes[x]++;
    document.getElementById(pos[x]).innerHTML = results[notes[x]];
+}
+  
+function down(y) {
+   if(y === undefined)
+      return;
+   if(notes[y] > 0)
+   	  notes[y]--;
+   document.getElementById(pos[y]).innerHTML = results[notes[y]];
 }
 </script>
 
