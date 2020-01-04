@@ -174,7 +174,7 @@ table.note {
 </div>
 <br>
 <form action="/myform" method="GET">
-   <input type="hidden" id="noteInput" name="noteInput" value= testVariable>
+   <input type="hidden" id="noteInput" name="noteInput" value= outputToBack>
    <div align="center">
       <input type="submit" value="Search" />
    </div>
@@ -185,44 +185,48 @@ var notes = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9];
 var pos = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen"];
 var results = ["x","-","c","C","d","D","e","f","F","g","G","a","A","b","c"];
 var names = ["rest.png","hold.png","lowC.png","CSharp.png","D.png","DSharp.png","E.png","F.png","FSharp.png","G.png","GSharp.png","A.png","ASharp.png","B.png","highC.png"];
-
 function up(x) {
    if(x === undefined)
       return;
    if(notes[x] < 14)
    	  notes[x]++;
-   document.getElementById(pos[x]).src = names[notes[x]];
+   document.getElementById(pos[x]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[x]];
+   update();
 }
-
 function down(y) {
    if(y === undefined)
       return;
    if(notes[y] > 0)
    	  notes[y]--;
-   document.getElementById(pos[y]).src = names[notes[y]];
+   document.getElementById(pos[y]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[y]];
+   update();
 }
   
 function hold(x) {
    if(x === undefined)
       return;
    notes[x] = 1;
-   document.getElementById(pos[x]).src = names[notes[x]];
+   document.getElementById(pos[x]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[x]];
+   update();
 }
   
 function rest(x) {
    if(x === undefined)
       return;
    notes[x] = 0;
-   document.getElementById(pos[x]).src = names[notes[x]];
+   document.getElementById(pos[x]).src = "https://ecstatic-cori-7ac946.netlify.com/" + names[notes[x]];
+   update();
 }
-  
+
 var outputToBack;
+function update(){
+   outputToBack = "";
    for(var i = 0; i < notes.length; i++){
       outputToBack += results[notes[i]];
    }
-   //var testVariable = "testing now plz work";
-   //document.getElementById("noteInput").value = testVariable;
-   document.getElementById("noteInput").value = testVariable;
+   document.getElementById("noteInput").value = outputToBack;
+}
+
 </script>
 
 </body>
