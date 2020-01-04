@@ -183,7 +183,7 @@ table.note {
 </div>
 <br>
 <div align="center">
-   <button>&#9654;</button> Play
+   <button onclick="playSong()">&#9654;</button> Play
 </div>
 <br>
 <form action="/myform" method="GET">
@@ -249,6 +249,58 @@ function update(){
 }
 
   update();
+
+function playSong(){
+
+   var songNotesList = [];
+   var beatS = 0.2;
+
+   for(var i = 0; i < 15; i++){
+      if(notes[i] == 1){
+         if(songNotesList.length != 0){
+            songNotesList[songNotesList.length-1].duration += beatS;
+         }
+      } else if(notes[i] == 0){
+         var curNote = new Object;
+         curNote.pitch = -1;
+         curNote.duration = beatS;
+         songNotesList.push(curNote);
+      } else {
+         var curNote = new Object;
+         curNote.pitch = 440.0*Math.pow(2, (notes[i]-11.0)/12.0);
+         curNote.duration = 0.75*beatS;
+         songNotesList.push(curNote);
+      }
+   }
+
+   //create a synth and connect it to the master output (your speakers)
+   var synth = new Tone.Synth().toMaster();
+
+   //synth.triggerAttackRelease("C4", 1.0);
+   //play a middle 'C' for the duration of an 8th note
+
+   
+   var id = Tone.Transport.scheduleRepeat(function(time){
+      if(songNotesList.length != 0){
+         console.log(songNotesList[0].pitch);
+         console.log(songNotesList[0].duration);
+         if(songNotesList[0].pitch != -1){
+            synth.triggerAttackRelease(songNotesList[0].pitch, songNotesList[0].duration);
+         }
+         if(songNotesList[0].duration <= beatS){
+            songNotesList.shift();
+         } else {
+            //"Cancel" and shorten the note for next round
+            songNotesList[0].pitch = -1;
+            songNotesList[0].duration -= beatS;
+         }
+      }
+   }, beatS);
+
+   Tone.Transport.start();
+}
+
+</script>
   
 </script>
 
