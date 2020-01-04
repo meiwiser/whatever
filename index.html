@@ -24,6 +24,20 @@ body {
   transform: translate(-50%, -50%);
   color: white;
 }
+.notesFlexContainer {
+   overflow: hidden;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+table.note {
+   float: left;
+   margin-right: 2%;
+   margin-left: 2%;
+   margin-bottom: 30px;
+   table-layout: fixed;
+   border-collapse: collapse;
+}
 </style>
 </head>
 <body>
@@ -34,87 +48,124 @@ body {
   </div>
 </div>
 
-<div align="center">
-   <button onclick="up(0)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(1)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(2)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(3)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(4)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(5)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(6)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(7)">&#9650;</button>
+<div class="notesFlexContainer">
+   <table class="note">
+      <tr><td><button onclick="up(0)">&#9650;</button></td></tr>
+      <tr><td><span id="one"></span></td></tr>
+      <tr><td><button onclick="down(0)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(1)">&#9650;</button></td></tr>
+      <tr><td><span id="two"></span></td></tr>
+      <tr><td><button onclick="down(1)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(2)">&#9650;</button></td></tr>
+      <tr><td><span id="three"></span></td></tr>
+      <tr><td><button onclick="down(2)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(3)">&#9650;</button></td></tr>
+      <tr><td><span id="four"></span></td></tr>
+      <tr><td><button onclick="down(3)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(4)">&#9650;</button></td></tr>
+      <tr><td><span id="five"></span></td></tr>
+      <tr><td><button onclick="down(4)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(5)">&#9650;</button></td></tr>
+      <tr><td><span id="six"></span></td></tr>
+      <tr><td><button onclick="down(5)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(6)">&#9650;</button></td></tr>
+      <tr><td><span id="seven"></span></td></tr>
+      <tr><td><button onclick="down(6)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(7)">&#9650;</button></td></tr>
+      <tr><td><span id="eight"></span></td></tr>
+      <tr><td><button onclick="down(7)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(8)">&#9650;</button></td></tr>
+      <tr><td><span id="nine"></span></td></tr>
+      <tr><td><button onclick="down(8)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(9)">&#9650;</button></td></tr>
+      <tr><td><span id="ten"></span></td></tr>
+      <tr><td><button onclick="down(9)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(10)">&#9650;</button></td></tr>
+      <tr><td><span id="eleven"></span></td></tr>
+      <tr><td><button onclick="down(10)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(11)">&#9650;</button></td></tr>
+      <tr><td><span id="twelve"></span></td></tr>
+      <tr><td><button onclick="down(11)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(12)">&#9650;</button></td></tr>
+      <tr><td><span id="thirteen"></span></td></tr>
+      <tr><td><button onclick="down(12)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(13)">&#9650;</button></td></tr>
+      <tr><td><span id="fourteen"></span></td></tr>
+      <tr><td><button onclick="down(13)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(14)">&#9650;</button></td></tr>
+      <tr><td><span id="fifteen"></span></td></tr>
+      <tr><td><button onclick="down(14)">&#9660;</button></td></tr>
+   </table>
+   <table class="note">
+      <tr><td><button onclick="up(15)">&#9650;</button></td></tr>
+      <tr><td><span id="sixteen"></span></td></tr>
+      <tr><td><button onclick="down(15)">&#9660;</button></td></tr>
+   </table>
 </div>
+
+<br>
 <div align="center">
-   <span id="one"></span>
-   <span id="two"></span>
-   <span id="three"></span>
-   <span id="four"></span>
-   <span id="five"></span>
-   <span id="six"></span>
-   <span id="seven"></span>
-   <span id="eight"></span>
-</div>
-<div align="center">
-   <button onclick="down(0)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(1)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(2)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(3)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(4)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(5)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(6)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(7)">&#9660;</button>
+   <button> > </button> Slow
+   <button> >> </button> Med
+   <button> >>> </button> Fast
 </div>
 <br>
 <div align="center">
-   <button onclick="up(8)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(9)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(10)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(11)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(12)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(13)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(14)">&#9650;</button>&#8195;&#8195;
-   <button onclick="up(15)">&#9650;</button>
+   <button>&#9654;</button> Play
 </div>
+<br>
 <div align="center">
-   <span id="nine"></span>
-   <span id="ten"></span>
-   <span id="eleven"></span>
-   <span id="twelve"></span>
-   <span id="thirteen"></span>
-   <span id="fourteen"></span>
-   <span id="fifteen"></span>
-   <span id="sixteen"></span>
-</div>
-<div align="center">
-      <button onclick="down(8)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(9)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(10)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(11)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(12)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(13)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(14)">&#9660;</button>&#8195;&#8195;
-   <button onclick="down(15)">&#9660;</button>
+   <button>Search</button>
 </div>
 
 <script>
 var notes = [8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8];
 var pos = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen"];
 var results = ["x","-","c","C","d","D","e","f","F","g","G","a","A","b","c"];
+var names = ["rest.png","hold.png","lowC.png","C#.png","D.png","D#.png","E.png","F.png","F#.png","G.png","G#.png","A.png","A#.png","B.png","highC.png"];
 
 function up(x) {
    if(x === undefined)
       return;
    if(notes[x] < 14)
    	  notes[x]++;
-   document.getElementById(pos[x]).innerHTML = results[notes[x]];
+   document.getElementById(pos[x]).innerHTML = names[notes[x]];
 }
-  
+
 function down(y) {
    if(y === undefined)
       return;
    if(notes[y] > 0)
    	  notes[y]--;
-   document.getElementById(pos[y]).innerHTML = results[notes[y]];
+   document.getElementById(pos[y]).innerHTML = names[notes[y]];
 }
 </script>
 
