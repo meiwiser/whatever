@@ -10,7 +10,7 @@ body {
 .hero-image {
   background-image: url("picture.jpg");
   background-color: #cccccc;
-  height: 300px;
+  height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,70 +30,73 @@ body {
 
 <div class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size:50px">Tune Finder</h1>
-    
+    <h1 style="font-size:50px">Tune Finder</h1>  
   </div>
 </div>
 
-<script>
-var notes = [8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8];
-var reference = ["x","-","c","C","d","D","e","f","F","g","G","a","A","b","c"];
-
-function up(x) {
-   if(x === undefined)
-   	  return;
-   if(notes[x] < 14)
-   	  notes[x]++;
-}
-</script>
-
 <div align="center">
-   <button onclick="up(0)">&#9650;</button>
-   <button onclick="up(1)">&#9650;</button>
-   <button onclick="up(2)">&#9650;</button>
-   <button onclick="up(3)">&#9650;</button>
-   <button onclick="up(4)">&#9650;</button>
-   <button onclick="up(5)">&#9650;</button>
-   <button onclick="up(6)">&#9650;</button>
+   <button onclick="up(0)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(1)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(2)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(3)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(4)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(5)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(6)">&#9650;</button>&#8195;&#8195;
    <button onclick="up(7)">&#9650;</button>
 </div>
 <div align="center">
-   <script>
-   	  for(var i = 0; i < 8; i++)
-   	  	document.write(notes[i]);
-   </script>
+   <span id="one"></span>
+   <span id="two"></span>
+   <span id="three"></span>
+   <span id="four"></span>
+   <span id="five"></span>
+   <span id="six"></span>
+   <span id="seven"></span>
+   <span id="eight"></span>
 </div>
 <div align="center">
-   <button onclick="down(0)">&#9660;</button>
-   <button onclick="down(1)">&#9660;</button>
-   <button onclick="down(2)">&#9660;</button>
-   <button onclick="down(3)">&#9660;</button>
-   <button onclick="down(4)">&#9660;</button>
-   <button onclick="down(5)">&#9660;</button>
-   <button onclick="down(6)">&#9660;</button>
+   <button onclick="down(0)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(1)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(2)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(3)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(4)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(5)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(6)">&#9660;</button>&#8195;&#8195;
    <button onclick="down(7)">&#9660;</button>
 </div>
 <br>
 <div align="center">
-   <button onclick="up(8)">&#9650;</button>
-   <button onclick="up(9)">&#9650;</button>
-   <button onclick="up(10)">&#9650;</button>
-   <button onclick="up(11)">&#9650;</button>
-   <button onclick="up(12)">&#9650;</button>
-   <button onclick="up(13)">&#9650;</button>
-   <button onclick="up(14)">&#9650;</button>
+   <button onclick="up(8)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(9)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(10)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(11)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(12)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(13)">&#9650;</button>&#8195;&#8195;
+   <button onclick="up(14)">&#9650;</button>&#8195;&#8195;
    <button onclick="up(15)">&#9650;</button>
 </div>
 <div align="center">
-      <button onclick="down(8)">&#9660;</button>
-   <button onclick="down(9)">&#9660;</button>
-   <button onclick="down(10)">&#9660;</button>
-   <button onclick="down(11)">&#9660;</button>
-   <button onclick="down(12)">&#9660;</button>
-   <button onclick="down(13)">&#9660;</button>
-   <button onclick="down(14)">&#9660;</button>
+      <button onclick="down(8)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(9)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(10)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(11)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(12)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(13)">&#9660;</button>&#8195;&#8195;
+   <button onclick="down(14)">&#9660;</button>&#8195;&#8195;
    <button onclick="down(15)">&#9660;</button>
 </div>
+
+<script>
+var notes = [8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8];
+var pos = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen"];
+var results = ["x","-","c","C","d","D","e","f","F","g","G","a","A","b","c"];
+
+function up(x) {
+   if(notes[x] < 14)
+   	  notes[x]++;
+   document.getElementById(pos[x]).innerHTML = results[notes[x]];
+}
+</script>
 
 </body>
 </html>
