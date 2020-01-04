@@ -209,6 +209,20 @@ function down(y) {
    outputToBack += results[notes[i]];
    }
 }
+  
+function hold(x) {
+   if(x === undefined)
+      return;
+   notes[x] = 1;
+   document.getElementById(pos[x]).src = names[notes[x]];
+}
+  
+function rest(x) {
+   if(x === undefined)
+      return;
+   notes[x] = 0;
+   document.getElementById(pos[x]).src = names[notes[x]];
+}
 </script>
 
 </body>
