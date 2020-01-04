@@ -178,11 +178,12 @@ table.note {
 </div>
   
 <form action="/myform" method="GET">
-   <input type="text" name="mytext" required />
-   <input type="text" name="mytext" required />
-   <input type="submit" value="Submit" />
+   <input type="hidden" id="noteInput" name="noteInput" value= testVariable>
+   <div align="center">
+      <input type="submit" value="Search" />
+   </div>
 </form>
-
+  
 <script>
 var notes = [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9];
 var pos = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen"];
@@ -203,11 +204,6 @@ function down(y) {
    if(notes[y] > 0)
    	  notes[y]--;
    document.getElementById(pos[y]).src = names[notes[y]];
-  
-   var outputToBack;
-   for(var i = 0; i < notes.length; i++){
-   outputToBack += results[notes[i]];
-   }
 }
   
 function hold(x) {
@@ -223,6 +219,14 @@ function rest(x) {
    notes[x] = 0;
    document.getElementById(pos[x]).src = names[notes[x]];
 }
+  
+var outputToBack;
+   for(var i = 0; i < notes.length; i++){
+      outputToBack += results[notes[i]];
+   }
+   //var testVariable = "testing now plz work";
+   //document.getElementById("noteInput").value = testVariable;
+   document.getElementById("noteInput").value = testVariable;
 </script>
 
 </body>
